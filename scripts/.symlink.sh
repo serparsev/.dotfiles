@@ -29,5 +29,5 @@ function linkDotfile {
   ln -s ${dotfilesDir}/${1} ${dest}
 }
 
-linkDotfile .vim
+linkDotfile .zprofile
 

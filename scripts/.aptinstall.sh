@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt update
-
 function install {
   which $1 &> /dev/null
 
