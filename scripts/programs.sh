@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cd programs/
+PROGRAMS_PATH=~/.dotfiles/scripts/programs
 
-./zsh.sh
-./vscode.sh
+"$PROGRAMS_PATH"/zsh.sh
+"$PROGRAMS_PATH"/vscode.sh
+
+

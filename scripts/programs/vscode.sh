@@ -11,3 +11,5 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 
 # Install vscode
 sudo apt install code
+
+echo "vscode installed"
