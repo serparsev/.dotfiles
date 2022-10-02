@@ -17,4 +17,4 @@ SCRIPTS_PATH=~/.dotfiles/scripts
 "$SCRIPTS_PATH"/symlink.sh
 
 # See our bash changes
-reboot
+# reboot
