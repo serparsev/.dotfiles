@@ -2,4 +2,4 @@
 
 cd programs/
 
-./docker.sh
+./zsh.sh

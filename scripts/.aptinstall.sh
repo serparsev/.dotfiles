@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt update
-
 function install {
   which $1 &> /dev/null
 
@@ -14,7 +12,7 @@ function install {
 }
 
 # Basics
+install zsh
 install code
-install curl
 install git
 install vim
