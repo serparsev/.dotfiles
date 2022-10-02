@@ -13,6 +13,4 @@ function install {
 
 # Basics
 install zsh
-install code
-install git
 install vim
