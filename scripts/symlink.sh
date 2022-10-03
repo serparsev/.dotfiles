@@ -30,5 +30,5 @@ function linkDotfile {
 }
 
 # linkDotfile .zprofile
-linkDotfile .zshrc
+# linkDotfile .zshrc
 
