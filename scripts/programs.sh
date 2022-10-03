@@ -2,7 +2,7 @@
 
 PROGRAMS_PATH=~/.dotfiles/scripts/programs
 
-"$PROGRAMS_PATH"/zsh.sh
+"$PROGRAMS_PATH"/ohmyzsh.sh
 "$PROGRAMS_PATH"/vscode.sh
 
 
