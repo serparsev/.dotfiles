@@ -15,4 +15,5 @@ function install {
 install zsh
 install vim
 install fonts-powerline
+install terminator
 
