@@ -14,3 +14,5 @@ function install {
 # Basics
 install zsh
 install vim
+install fonts-powerline
+
