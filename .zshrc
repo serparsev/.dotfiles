@@ -3,12 +3,14 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export DOTFILES="$HOME/.dotfiles"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
+DEFAULT_USER="sps"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +72,16 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  ssh-agent
+  web-search
+)
+
+# ssh-agent plugins
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+zstyle :omz:plugins:ssh-agent helper ksshaskpass
+zstyle :omz:plugins:ssh-agent identities id_sps_personal
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,3 +110,54 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+  fi
+}
+
+
+# . "$DOTFILES"/zsh/aliases.sh
+
+
+# make aliases sudo-able
+alias sudo="sudo "
+
+# edit this folder
+alias dot="cd ~/.dotfiles"
+# reload
+alias rl="source ~/.bashrc; echo '~/.bashrc reloaded.'"
+
+# directory navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# some ls aliases
+alias la="ls -A"
+alias ll="ls -Al"
+
+# git shortcuts
+alias gs="git status"
+alias ga="git add -A ."
+alias gc="git commit"
+alias gb="git branch"
+alias gd="git diff"
+alias gco="git checkout"
+alias gp="git push"
+alias gl="git pull"
+alias gt="git tag"
+alias gm="git merge"
+alias gg="git log --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr) %C(bold blue)<%an>%Creset %C(yellow)%ad%Creset' --abbrev-commit --date=short"
+alias ggr="git log --reverse --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr) %C(bold blue)<%an>%Creset %C(yellow)%ad%Creset' --abbrev-commit --date=short"
+alias gcp="git cherry-pick"
+alias gbg="git bisect good"
+alias gbb="git bisect bad"
+
+# process finding
+alias pg="pgrep -lf"
+
+# docker
+alias dcu="docker-compose up"

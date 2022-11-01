@@ -29,6 +29,5 @@ function linkDotfile {
   ln -s ${dotfilesDir}/${1} ${dest}
 }
 
-# linkDotfile .zprofile
 # linkDotfile .zshrc
 
